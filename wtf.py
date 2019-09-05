@@ -1,9 +1,9 @@
 import os
+import pickle
 
 import click
 import requests
 import bs4
-import pickle
 
 from prettytable import PrettyTable
 
@@ -46,10 +46,10 @@ def parse_content(content):
         rating = len(rating.select("#abbr-rate > span.sf"))
 
         data = {
-                'term': term.get_text(),
-                'definition': definition.get_text(),
-                'rating': rating,
-                }
+            'term': term.get_text(),
+            'definition': definition.get_text(),
+            'rating': rating,
+        }
 
         info.append(data)
 
